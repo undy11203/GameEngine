@@ -5,9 +5,11 @@
 
 extern GameEngine::Application* GameEngine::CreateApplication();
 
-void main(int argc, char** argv)
+int main(int argc, char** argv)
 {
-	printf("Game Engine\n");
+	GameEngine::Log::Init();
+	GameEngine::Log::GetCoreLogger()->warn("Core init");
+	GameEngine::Log::GetClientLogger()->info("Client init");
 	auto app = GameEngine::CreateApplication();
 	app->Run();
 	delete app;
