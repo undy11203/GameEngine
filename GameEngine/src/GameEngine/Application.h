@@ -2,10 +2,11 @@
 
 
 #include "Core.h"
+#include "Events/Event.h"
 
 namespace GameEngine {
 
-	class __declspec(dllexport) Application
+	class GAMEENGINE_API Application
 	{
 	public:
 		Application();
@@ -14,5 +15,4 @@ namespace GameEngine {
 	};
 
 	Application* CreateApplication();
-} 
-
+}

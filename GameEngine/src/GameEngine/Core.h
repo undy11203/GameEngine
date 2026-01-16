@@ -11,3 +11,5 @@
 #else
 	#error Game engine support only Windows
 #endif
+
+#define BIT(x) (1 << x)

@@ -27,20 +27,22 @@ project "GameEngine"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.22621.0"
+		systemversion "latest"
 
 		buildoptions { "/utf-8" }
 
 		defines
 		{
 			"GE_PLATFORM_WINDOWS",
-			"GE_BUILD_DLL"
+			"GE_BUILD_DLL",
+			"SPDLOG_HEADER_ONLY"
 		}
 
 		postbuildcommands
@@ -89,13 +91,14 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.22621.0"
+		systemversion "latest"
 
 		buildoptions { "/utf-8" }
 
 		defines
 		{
-			"GE_PLATFORM_WINDOWS"
+			"GE_PLATFORM_WINDOWS",
+			"SPDLOG_HEADER_ONLY"
 		}
 	
 	filter "configurations:Debug"
