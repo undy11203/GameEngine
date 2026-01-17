@@ -18,6 +18,9 @@ project "GameEngine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	
+	pchheader "pch.h"
+	pchsource "GameEngine/src/pch.cpp"
 
 	files
 	{
@@ -42,7 +45,7 @@ project "GameEngine"
 		{
 			"GE_PLATFORM_WINDOWS",
 			"GE_BUILD_DLL",
-			"SPDLOG_HEADER_ONLY"
+			"SPDLOG_HEADER_ONLY=1"
 		}
 
 		postbuildcommands
@@ -98,7 +101,7 @@ project "Sandbox"
 		defines
 		{
 			"GE_PLATFORM_WINDOWS",
-			"SPDLOG_HEADER_ONLY"
+			"SPDLOG_HEADER_ONLY=1"
 		}
 	
 	filter "configurations:Debug"

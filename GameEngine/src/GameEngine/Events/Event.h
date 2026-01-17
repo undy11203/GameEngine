@@ -2,9 +2,7 @@
 
 #include "../Core.h"
 
-#include <string>
-#include <functional>
-#include <iostream>
+#include "spdlog/spdlog.h"
 #include <spdlog/fmt/ostr.h>
 
 namespace GameEngine {
