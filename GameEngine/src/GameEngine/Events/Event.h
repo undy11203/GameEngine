@@ -2,6 +2,8 @@
 
 #include "../Core.h"
 
+#include <sstream>
+
 #include "spdlog/spdlog.h"
 #include <spdlog/fmt/ostr.h>
 
