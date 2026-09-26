@@ -9,6 +9,18 @@ void vulkan_renderpass_create(
     f32 r, f32 g, f32 b, f32 a,
     f32 depth,
     u32 stencil) {
+    out_renderpass->x = x;
+    out_renderpass->y = y;
+    out_renderpass->w = w;
+    out_renderpass->h = h;
+
+    out_renderpass->r = r;
+    out_renderpass->g = g;
+    out_renderpass->b = b;
+    out_renderpass->a = a;
+
+    out_renderpass->depth = depth;
+    out_renderpass->stencil = stencil;
 
     // Main subpass
     VkSubpassDescription subpass = {};
@@ -20,7 +32,7 @@ void vulkan_renderpass_create(
 
     // Color attachment
     VkAttachmentDescription color_attachment;
-    color_attachment.format = context->swapchain.image_format.format; // TODO: configurable
+    color_attachment.format = context->swapchain.image_format.format;  // TODO: configurable
     color_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
     color_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
     color_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;

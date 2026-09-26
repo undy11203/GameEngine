@@ -101,3 +101,13 @@ STATIC_ASSERT(sizeof(f64) == 8, "Expected f64 to be 8 bytes.");
 #define UAPI
 #endif
 #endif
+
+                                                                      
+// Inlining
+#ifdef _MSC_VER
+#define UINLINE __forceinline
+#define UNOINLINE __declspec(noinline)
+#else
+#define UINLINE static inline
+#define UNOINLINE
+#endif
